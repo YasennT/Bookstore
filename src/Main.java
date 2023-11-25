@@ -22,7 +22,7 @@ public class Main {
 
             Author author = new Author(authorName, authorAge);
 
-            System.out.print("Enter book type (CHILDREN_BOOK, COMIC_BOOK, BOOK): ");
+            System.out.print("Vavedete vid kniga (CHILDREN_BOOK, COMIC_BOOK, BOOK): ");
             String bookTypeStr = sc.nextLine();
             BookType bookType = BookType.valueOf(bookTypeStr);
 
