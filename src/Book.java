@@ -4,6 +4,10 @@ public class Book
     private Author author;
     private double price;
 
+    public Book() {
+
+    }
+
     public String getTitle() {
         return title;
     }

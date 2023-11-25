@@ -2,50 +2,50 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         Bookstore bookstore = new Bookstore();
 
-        System.out.print("Enter the number of books: ");
-        int numBooks = sc.nextInt();
-        sc.nextLine();
+        System.out.print("Vavedete broi knigi: ");
+        int numberBooks = scanner.nextInt();
 
-        for (int i = 0; i < numBooks; i++) {
-            System.out.print("Enter book title: ");
-            String title = sc.nextLine();
+        for (int i = 0; i < numberBooks; i++) {
+            System.out.println("Vavedete detaili za Kniga " + (i + 1));
 
-            System.out.print("Enter author name: ");
-            String authorName = sc.nextLine();
+            System.out.print("Vavedete zaglavie: ");
+            String title = scanner.next();
 
-            System.out.print("Enter author age: ");
-            int authorAge = sc.nextInt();
-            sc.nextLine();
+            System.out.print("Vavedete ime na avtor: ");
+            String authorName = scanner.next();
+
+            System.out.print("Vavedete vuzrast na avtor: ");
+            int authorAge = scanner.nextInt();
 
             Author author = new Author(authorName, authorAge);
 
             System.out.print("Vavedete vid kniga (CHILDREN_BOOK, COMIC_BOOK, BOOK): ");
-            String bookTypeStr = sc.nextLine();
-            BookType bookType = BookType.valueOf(bookTypeStr);
+            BookType bookType = BookType.valueOf(scanner.next());
 
             Book book;
-            if (bookType == BookType.COMIC_BOOK) {
-                System.out.print("Enter character name: ");
-                String characterName = sc.nextLine();
-                book = new ComicBook(title, author, 10.0, characterName);
-            } else if (bookType == BookType.CHILDREN_BOOK) {
-                System.out.print("Enter age group: ");
-                int age = sc.nextInt();
-                book = new ChildrenBook(title, author, 12.0, age);
-            } else {
-                book = new Book(title, author, 15.0);
+            switch (bookType) {
+                case CHILDREN_BOOK:
+                    System.out.print("Vavedete vuzrast: ");
+                    int age = scanner.nextInt();
+                    book = new ChildrenBook(title, author, 12.0, age);
+                    break;
+                case COMIC_BOOK:
+                    System.out.print("Enter character name: ");
+                    String characterName = scanner.next();
+                    book = new ComicBook(title, author, 10.0, characterName);
+                    break;
+                default:
+                    book = new Book();
             }
 
-            bookstore.getBooks().add(book);
+            bookstore.addBook(book);
         }
-        sc.close();
 
-        if (!bookstore.getBooks().isEmpty()) {
-            Book bookToSell = bookstore.getBooks().get(0);
-            bookstore.sell(bookToSell);
+        for (int i = 1; i < numberBooks; i += 2) {
+            bookstore.sell(bookstore.getBooks().get(i));
         }
     }
 }

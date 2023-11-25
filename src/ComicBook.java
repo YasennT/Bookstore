@@ -2,6 +2,8 @@ public class ComicBook extends Book
 {
     private String characterName;
 
+    public ComicBook() {
+    }
     public ComicBook(String title, Author author, double price, String characterName)
     {
         super(title, author, price);
@@ -22,5 +24,8 @@ public class ComicBook extends Book
     {
         System.out.println("Komiks - Zaglavie: " + getTitle() + ", Avtor: " + getAuthor().getName() +
                 ", Geroi: " + characterName + ", Cena: lv " + getPrice());
+    }
+
+    public void setCharacterName(String superhero) {
     }
 }

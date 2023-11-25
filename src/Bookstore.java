@@ -13,16 +13,20 @@ public class Bookstore
         this.books = books;
     }
 
-    public void sell(Book book)
+    public void addBook(Book book) {
+    }
+    public void sell(Book prodajba)
     {
-        if (books.contains(book))
+        if (books.contains(prodajba))
         {
-            books.remove(book);
-            System.out.println("Prodadeno: " + book.getTitle() + " ot " + book.getAuthor().getName() + " za lv " + book.getPrice());
+            books.remove(prodajba);
+            System.out.println("Prodadeno: " + prodajba.getTitle() + " ot " + prodajba.getAuthor().getName() + " za lv " + prodajba.getPrice());
         }
         else
         {
-            System.out.println("Izvinete, " + book.getTitle() + " ot " + book.getAuthor().getName() + " ne e nalichna");
+            System.out.println("Izvinete, " + prodajba.getTitle() + " ot " + prodajba.getAuthor().getName() + " ne e nalichna");
         }
     }
+
+
 }

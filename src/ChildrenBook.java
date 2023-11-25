@@ -2,6 +2,10 @@ public class ChildrenBook extends Book
 {
     private int age;
 
+    public ChildrenBook() {
+
+    }
+
     public ChildrenBook(String title, Author author, double price, int age)
     {
         super(title, author, price);
@@ -19,4 +23,6 @@ public class ChildrenBook extends Book
         System.out.println("Detska kniga - Zaglavie: " + getTitle() + ", Avtor: " + getAuthor().getName() +
                 ", Vuzrast: " + age + ", Cena: lv " + getPrice());
     }
+
+
 }
