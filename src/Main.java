@@ -38,13 +38,15 @@ public class Main {
                     book = new ComicBook(title, author, 10.0, characterName);
                     break;
                 default:
-                    book = new Book();
+                    book = new Book(title, author, 15.0);
+                    break;
+
             }
 
             bookstore.addBook(book);
         }
 
-        for (int i = 1; i < numberBooks; i += 2) {
+        for (int i = 1; i < numberBooks; i += 2) {      //Ima problem s metoda
             bookstore.sell(bookstore.getBooks().get(i));
         }
     }

@@ -26,6 +26,5 @@ public class ComicBook extends Book
                 ", Geroi: " + characterName + ", Cena: lv " + getPrice());
     }
 
-    public void setCharacterName(String superhero) {
-    }
+
 }

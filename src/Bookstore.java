@@ -3,7 +3,7 @@ import java.util.List;
 
 public class Bookstore
 {
-    private List<Book> books = new ArrayList<>();
+    List<Book> books = new ArrayList<>();
 
     public List<Book> getBooks() {
         return books;
