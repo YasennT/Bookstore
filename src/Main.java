@@ -14,7 +14,7 @@ public class Main {
             System.out.print("Vavedete zaglavie: ");
             String title = scanner.next();
 
-            System.out.print("Vavedete ime na avtor: ");
+            System.out.print("Vavedete imeto na avtora: ");
             String authorName = scanner.next();
 
             System.out.print("Vavedete vuzrast na avtor: ");
